@@ -24,21 +24,6 @@ isObjProp('gulp', 'task');
 // => false;
 ```
 
-### ES5
-```javascript
-var isObjProp = require('is-obj-prop');
-
-isObjProp('array', 'length');
-// => true
-
-isObjProp('ARRAY', 'push');
-// => false
-
-// is-obj-prop can only verify native JS types
-isObjProp('customObject', 'customGetterOrSetter');
-// => false;
-```
-
 ## API
 ### isObjProp(type, propertyName)
 #### type
