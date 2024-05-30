@@ -7,6 +7,7 @@
     "lint": "eslint .",
     "test": "npm run lint && c8 ava"
   },
+  "type": "module",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -29,7 +30,7 @@
   ],
   "dependencies": {
     "lowercase-keys": "^1.0.0",
-    "obj-props": "^1.0.0"
+    "obj-props": "^2.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.3.0",

@@ -1,6 +1,5 @@
-'use strict'
-const lowercaseKeys = require('lowercase-keys')
-const objProps = require('obj-props')
+import lowercaseKeys from 'lowercase-keys'
+import objProps from 'obj-props'
 
 const lowerObjProps = lowercaseKeys(objProps)
 
@@ -10,7 +9,7 @@ const lowerObjProps = lowercaseKeys(objProps)
  * @param {String} property - name of property
  * @return {Boolean} - type has named property
  */
-module.exports = (type, property) => {
+export default (type, property) => {
   if (typeof type !== 'string' || typeof property !== 'string') {
     throw new TypeError('Expected a string')
   }
