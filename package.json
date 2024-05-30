@@ -29,7 +29,7 @@
     "src"
   ],
   "dependencies": {
-    "lowercase-keys": "^1.0.0",
+    "lowercase-keys": "^3.0.0",
     "obj-props": "^2.0.0"
   },
   "devDependencies": {
