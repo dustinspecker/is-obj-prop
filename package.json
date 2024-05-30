@@ -9,7 +9,7 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "engines": {
-    "node": ">6.0.0"
+    "node": ">=18.0.0"
   },
   "repository": "dustinspecker/is-obj-prop",
   "keywords": [
