@@ -11,7 +11,10 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "repository": "dustinspecker/is-obj-prop",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustinspecker/is-obj-prop.git"
+  },
   "keywords": [
     "js",
     "javascript",
