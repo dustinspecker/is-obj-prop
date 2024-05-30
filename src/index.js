@@ -1,6 +1,6 @@
 'use strict'
-import lowercaseKeys from 'lowercase-keys'
-import objProps from 'obj-props'
+const lowercaseKeys = require('lowercase-keys')
+const objProps = require('obj-props')
 
 const lowerObjProps = lowercaseKeys(objProps)
 

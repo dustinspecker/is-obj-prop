@@ -1,7 +1,9 @@
 /* global describe, it */
 'use strict'
-import {expect} from 'chai'
-import isObjProp from '../lib/'
+const chai = require('chai')
+const isObjProp = require('../src/')
+
+const expect = chai.expect
 
 describe('is-obj-prop', () => {
   it('should throw error when type or property is not a string', () => {
