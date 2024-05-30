@@ -1,36 +1,31 @@
-/* global describe, it */
 'use strict'
-const chai = require('chai')
+const test = require('ava')
 const isObjProp = require('../src/')
 
-const expect = chai.expect
+test('should throw error when type or property is not a string', t => {
+  const typeTest = () => isObjProp(1, 'prop')
+  const propTest = () => isObjProp('type', 1)
 
-describe('is-obj-prop', () => {
-  it('should throw error when type or property is not a string', () => {
-    const typeTest = () => isObjProp(1, 'prop')
-    const propTest = () => isObjProp('type', 1)
+  t.throws(typeTest, TypeError, /Expected a string/)
+  t.throws(propTest, TypeError, /Expected a string/)
+})
 
-    expect(typeTest).to.throw(TypeError, /Expected a string/)
-    expect(propTest).to.throw(TypeError, /Expected a string/)
-  })
+test('should return false if not a js type', t => {
+  t.falsy(isObjProp('dog', 'bark'))
+  t.falsy(isObjProp('gulp', 'task'))
+})
 
-  it('should return false if not a js type', () => {
-    expect(isObjProp('dog', 'bark')).to.eql(false)
-    expect(isObjProp('gulp', 'task')).to.eql(false)
-  })
+test('should return false if type does not have property', t => {
+  t.falsy(isObjProp('Array', 'push'))
+  t.falsy(isObjProp('Error', 'ignore'))
+})
 
-  it('should return false if type does not have property', () => {
-    expect(isObjProp('Array', 'push')).to.eql(false)
-    expect(isObjProp('Error', 'ignore')).to.eql(false)
-  })
+test('shoud return true if type does have property', t => {
+  t.truthy(isObjProp('Array', 'from'))
+  t.truthy(isObjProp('Error', 'name'))
+})
 
-  it('shoud return true if type does have property', () => {
-    expect(isObjProp('Array', 'from')).to.eql(true)
-    expect(isObjProp('Error', 'name')).to.eql(true)
-  })
-
-  it('should be case insensitive for types', () => {
-    expect(isObjProp('array', 'length')).to.eql(true)
-    expect(isObjProp('ARRAY', 'length')).to.eql(true)
-  })
+test('should be case insensitive for types', t => {
+  t.truthy(isObjProp('array', 'length'))
+  t.truthy(isObjProp('ARRAY', 'length'))
 })
